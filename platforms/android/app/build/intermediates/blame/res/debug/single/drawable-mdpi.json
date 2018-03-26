@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\github\\zhiwei-weex\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_action_refresh.png",
+        "source": "D:\\github\\zhiwei-weex\\platforms\\android\\app\\src\\main\\res\\drawable-mdpi\\ic_action_refresh.png"
+    },
+    {
+        "merged": "D:\\github\\zhiwei-weex\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_action_scan.png",
+        "source": "D:\\github\\zhiwei-weex\\platforms\\android\\app\\src\\main\\res\\drawable-mdpi\\ic_action_scan.png"
+    }
+]
