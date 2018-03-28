@@ -13,8 +13,5 @@ export default {
   }
 }
 </script>
-<style>
-  .wrapper {
-    /*background-color: blue;*/
-  }
+<style scoped>
 </style>

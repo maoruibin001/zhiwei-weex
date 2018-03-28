@@ -8,10 +8,10 @@
 
 <script>
     import TabBar from '../components/TabBar';
-    import Home from './components/Home.vue';
-    import Mine from './components/Mine.vue';
-    import Open from './components/Open.vue';
-    import Tech from './components/Tech.vue';
+    import Home from './components/home/Home.vue';
+    import Mine from './components/mine/Mine.vue';
+    import Open from './components/open/Open.vue';
+    import Tech from './components/Tech/Tech.vue';
     export default {
         components: {
             TabBar,

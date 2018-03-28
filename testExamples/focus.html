@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input @input="inputText()" type="text" ref="input">
+    <button @click="clear()">click</button>
+</div>
+<script src="https://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+
+<script>
+    new Vue({
+        el: '#app',
+        methods: {
+            inputText() {
+                console.log(this.$refs.input);
+            },
+            clear() {
+                this.$refs.input.value = '';
+                this.$refs.input.focus();
+            }
+        }
+    })
+</script>
+</body>
+</html>

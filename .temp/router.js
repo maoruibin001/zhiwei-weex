@@ -1,16 +1,24 @@
 import Vue from 'vue'
 /*global Vue*/
-import Router from 'vue-router'
-import Index from '@/index/index.vue'
+import Router from 'vue-router';
+import Index from '@/index/index.vue';
+import Search from '@/components/Search.vue';
 
-Vue.use(Router)
+Vue.use(Router);
 
 module.exports = new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Index',
-      component: Index
-    }
-  ]
+    routes: [
+        {
+            path: '/',
+            name: 'Index',
+            component: Index,
+            query: null
+        },
+        {
+            path: '/search',
+            name: 'Search',
+            component: Search,
+            query: null
+        }
+    ]
 })
