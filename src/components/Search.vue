@@ -73,6 +73,7 @@
 
             inputText(event) {
                 this.showX = !!event.value;
+                this.searchText = 2;
             },
 
             clearIpt() {
