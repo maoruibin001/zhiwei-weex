@@ -43,7 +43,7 @@
                 scrollTabHeight: SCROLLTABHEIGHT,
                 componentHeight: utils.DEVICEHEIGHT - SCROLLTABHEIGHT - TABBARHEIGHT,
                 ScrollableTabView,
-                activeScrollItem: Focus,
+                activeScrollItem: Animation,
                 scrollItems: [
                     {
                         tabBarUnderlineStyle: {
@@ -57,7 +57,7 @@
                         },
                         title: '关注',
                         component: Focus,
-                        active: true,
+                        active: false,
                         onPress: (item) => {
                             this.activeScrollItem = item.component;
                         }
@@ -108,7 +108,7 @@
                         },
                         title: '动画',
                         component: Animation,
-                        active: false,
+                        active: true,
                         onPress: (item) => {
                             this.activeScrollItem = item.component;
                         }

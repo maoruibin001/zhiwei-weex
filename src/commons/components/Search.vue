@@ -67,7 +67,9 @@
             back() {
                 this.$router.push({
                     name: this.$route.query.from || 'Index',
-                    query: {}
+                    query: {
+                        from: 'Search'
+                    }
                 })
             },
 
