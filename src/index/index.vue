@@ -7,7 +7,7 @@
 </template>
 
 <script>
-    import TabBar from '../components/TabBar';
+    import TabBar from '../commons/components/TabBar';
     import Home from './components/home/Home.vue';
     import Mine from './components/mine/Mine.vue';
     import Open from './components/open/Open.vue';

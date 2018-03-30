@@ -1,5 +1,5 @@
 <template>
-    <div class="searchBox" @click="toSearch()">
+    <div class="searchBox" @click="toSearch()" :style="{height: `${height}px`}">
         <div class="searchInput">
             <div class="searchImage">
                 <image  style="height: 40px; width: 40px;" src="/src/images/search.png"></image>
@@ -13,7 +13,8 @@
     .searchBox {
         padding: 10px 20px;
         background-color: blue;
-        height: 100px;
+        position:relative;
+        /*height: 100px;*/
     }
     .searchInput {
         background-color: #fff;
@@ -35,6 +36,7 @@
 <script>
 
     export default {
+        props: ['height'],
         methods: {
             toSearch() {
                 this.$router.push({

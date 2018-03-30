@@ -2,7 +2,7 @@ import Vue from 'vue'
 /*global Vue*/
 import Router from 'vue-router';
 import Index from '@/index/index.vue';
-import Search from '@/components/Search.vue';
+import Search from '@/commons/components/Search.vue';
 
 Vue.use(Router);
 
