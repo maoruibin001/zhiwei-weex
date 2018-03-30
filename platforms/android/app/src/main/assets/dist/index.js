@@ -19999,7 +19999,7 @@ module.exports = {
     "display": "flex",
     "flexDirection": "row",
     "justifyContent": "space-around",
-    "backgroundColor": "#ffffff",
+    "backgroundColor": "#efefef",
     "border": "1px solid #efefef",
     "boxShadow": "20px 20px 20px #000"
   },
@@ -20451,15 +20451,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       height: (_vm.totalheight + "px")
     }
   }, [_c('div', {
-    staticClass: ["content"],
     style: {
       height: (_vm.scrollerHeight + "px")
     }
-  }, [_c('div', {
-    style: {
-      height: (_vm.scrollerHeight + "px")
-    }
-  }, [_vm._t("default")], 2)]), _c('div', {
+  }, [_vm._t("default")], 2), _c('div', {
     staticClass: ["nav"],
     style: {
       height: (_vm.barHeight + "px"),
@@ -20467,10 +20462,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, _vm._l((_vm.barItems), function(item) {
     return _c('div', {
-      staticClass: ["link"],
-      style: {
-        color: item.selected ? '#00BBE4' : 'gray'
-      },
       on: {
         "click": function($event) {
           _vm.press(item, _vm.barItems)
@@ -20877,12 +20868,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-//
 
 var modal = weex.requireModule('modal');
 
 var SCROLLTABHEIGHT = 100;
-var TABBARHEIGHT = 250;
+var TABBARHEIGHT = 100;
 exports.default = {
     //        props: ['height'],
     components: {
@@ -20899,7 +20889,7 @@ exports.default = {
             scrollTabHeight: SCROLLTABHEIGHT,
             componentHeight: _utils2.default.DEVICEHEIGHT - SCROLLTABHEIGHT - TABBARHEIGHT,
             ScrollableTabView: _ScrollableTabView2.default,
-            activeScrollItem: _Animation2.default,
+            activeScrollItem: _Focus2.default,
             scrollItems: [{
                 tabBarUnderlineStyle: {
                     borderBottomWidth: '4px'
@@ -20912,7 +20902,7 @@ exports.default = {
                 },
                 title: '关注',
                 component: _Focus2.default,
-                active: false,
+                active: true,
                 onPress: function onPress(item) {
                     _this.activeScrollItem = item.component;
                 }
@@ -20960,7 +20950,7 @@ exports.default = {
                 },
                 title: '动画',
                 component: _Animation2.default,
-                active: true,
+                active: false,
                 onPress: function onPress(item) {
                     _this.activeScrollItem = item.component;
                 }
@@ -21038,6 +21028,7 @@ module.exports = {
     "fontWeight": "500"
   },
   "tabContent": {
+    "backgroundColor": "#FF0000",
     "overflowY": "scroll",
     "position": "absolute",
     "top": "100"
@@ -21116,6 +21107,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
 
 var DISTANCE = 50;
 var PLATFORM = weex.config.env.platform;
@@ -21132,7 +21125,10 @@ exports.default = {
         };
     },
     mounted: function mounted() {
-        console.log(_utils2.default.DEVICEWIDTH);
+        modal.toast({
+            message: this.componentHeight,
+            duration: 3
+        });
         this.currentItem = this.scrollItems.filter(function (e) {
             return e.active;
         })[0] || this.scrollItems[0];
@@ -21407,6 +21403,9 @@ var modal = weex.requireModule('modal'); //
 //
 //
 //
+//
+//
+//
 
 exports.default = {
     props: ['height'],
@@ -21457,11 +21456,12 @@ exports.default = {
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('scroller', {
-    staticClass: ["list"],
+  return _c('div', {
     style: {
       height: (_vm.height + "px")
     }
+  }, [_c('list', {
+    staticClass: ["list"]
   }, [_vm._l((_vm.l), function(num) {
     return _c('div', {
       staticClass: ["cell"]
@@ -21482,7 +21482,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["indicator-text"]
   }, [_vm._v("Loading ...")]), _c('loading-indicator', {
     staticClass: ["indicator"]
-  })])], 2)
+  })])], 2)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -21701,9 +21701,7 @@ module.exports = {
     "display": "flex",
     "justifyContent": "center",
     "alignItems": "center",
-    "position": "relative",
-    "width": 100,
-    "height": 100
+    "position": "absolute"
   },
   "beginBtn": {
     "backgroundColor": "#20B2AA",
@@ -21727,37 +21725,21 @@ module.exports = {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
+var _utils = __webpack_require__(1);
+
+var _utils2 = _interopRequireDefault(_utils);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
+    data: function data() {
+        return {
+            width: _utils2.default.DEVICEWIDTH,
+            height: _utils2.default.DEVICEHEIGHT - 300
+        };
+    },
+
     methods: {
         go: function go() {
             this.$router.push({
@@ -21769,7 +21751,31 @@ exports.default = {
             });
         }
     }
-};
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 165 */
@@ -21777,7 +21783,11 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: ["animationBox"]
+    staticClass: ["animationBox"],
+    style: {
+      width: (_vm.width + "px"),
+      height: (_vm.height + "px")
+    }
   }, [_c('text', {
     staticClass: ["beginBtn"],
     on: {
@@ -22331,7 +22341,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 
-
 var step = 40;
 var modal = weex.requireModule('modal');
 var animation = weex.requireModule('animation');
@@ -22432,7 +22441,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: ["animationContainer"],
     style: {
-      height: _vm.pageHeight
+      height: (_vm.pageHeight + "px"),
+      width: (_vm.pageWidth + "px")
     }
   }, [_c('div', {
     ref: "imgBox",

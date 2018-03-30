@@ -1,5 +1,5 @@
 <template>
-    <div class="animationBox">
+    <div class="animationBox" :style="{width: `${width}px`, height:`${height}px`}">
         <text class="beginBtn" @click="go">go</text>
     </div>
 </template>
@@ -10,10 +10,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        position: relative;
-        width: 100%;
-        height: 100%;
-
+        position: absolute;
     }
 
     .beginBtn {
@@ -28,7 +25,14 @@
 
 <script>
 
+    import utils from '../../../commons/utils/utils';
     export default {
+        data() {
+            return {
+                width: utils.DEVICEWIDTH,
+                height: utils.DEVICEHEIGHT - 300
+            }
+        },
         methods: {
             go() {
                 this.$router.push({

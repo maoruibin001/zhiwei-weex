@@ -1,5 +1,5 @@
 <template>
-    <div class="animationContainer" :style="{height: pageHeight}">
+    <div class="animationContainer" :style="{height: `${pageHeight}px`, width: `${pageWidth}px`}">
         <div class="imageBox" ref="imgBox"
              :style="{left: `${left}px`, top: `${top}px`, right: `${right}px`, bottom: `${bottom}px`}">
             <image style="width: 100px;height:100px;" class="img" src="/src/images/pan.jpg"></image>
@@ -23,7 +23,6 @@
 </style>
 
 <script>
-
     const step = 40;
     const modal = weex.requireModule('modal');
     const animation = weex.requireModule('animation');

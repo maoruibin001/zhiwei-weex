@@ -9,7 +9,6 @@
 <style>
 
     .content {
-        /*background-color: red;*/
         /*width: 500px;*/
         /*height: 500px;*/
         /*padding: 0 0 1px 0;*/
@@ -28,7 +27,7 @@
     const modal = weex.requireModule('modal');
 
     const SCROLLTABHEIGHT = 100;
-    const TABBARHEIGHT = 250;
+    const TABBARHEIGHT = 100;
     export default {
 //        props: ['height'],
         components: {
@@ -43,7 +42,7 @@
                 scrollTabHeight: SCROLLTABHEIGHT,
                 componentHeight: utils.DEVICEHEIGHT - SCROLLTABHEIGHT - TABBARHEIGHT,
                 ScrollableTabView,
-                activeScrollItem: Animation,
+                activeScrollItem: Focus,
                 scrollItems: [
                     {
                         tabBarUnderlineStyle: {
@@ -57,7 +56,7 @@
                         },
                         title: '关注',
                         component: Focus,
-                        active: false,
+                        active: true,
                         onPress: (item) => {
                             this.activeScrollItem = item.component;
                         }
@@ -108,7 +107,7 @@
                         },
                         title: '动画',
                         component: Animation,
-                        active: true,
+                        active: false,
                         onPress: (item) => {
                             this.activeScrollItem = item.component;
                         }

@@ -39377,7 +39377,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.content[data-v-72b6fbe6] {\n    overflow-y: scroll;\n    padding: 0 0 1px 0;\n}\n.nav[data-v-72b6fbe6] {\n    position: absolute;\n    z-index: 1000;\n    bottom: 0;\n    left: 0;\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    background-color: #fff;\n    border: 1px solid #efefef;\n    box-shadow: 0.26667rem 0.26667rem 0.26667rem #000;\n}\n.title[data-v-72b6fbe6] {\n    padding: 1em;\n    font-size: 0.4rem;\n}\n.imgBox[data-v-72b6fbe6] {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding: 0.13333rem;\n}\n.title[data-v-72b6fbe6] {\n    padding: 0;\n}\n\n", ""]);
+exports.push([module.i, "\n.content[data-v-72b6fbe6] {\n    overflow-y: scroll;\n    padding: 0 0 1px 0;\n}\n.nav[data-v-72b6fbe6] {\n    position: absolute;\n    z-index: 1000;\n    bottom: 0;\n    left: 0;\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-around;\n    background-color: #efefef;\n    border: 1px solid #efefef;\n    box-shadow: 0.26667rem 0.26667rem 0.26667rem #000;\n}\n.title[data-v-72b6fbe6] {\n    padding: 1em;\n    font-size: 0.4rem;\n}\n.imgBox[data-v-72b6fbe6] {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding: 0.13333rem;\n}\n.title[data-v-72b6fbe6] {\n    padding: 0;\n}\n\n", ""]);
 
 // exports
 
@@ -39813,14 +39813,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "weex-type": "div"
     }
   }, [_c('div', {
-    staticClass: "content weex-ct weex-div",
-    style: ({
-      height: _vm._px2rem((_vm.scrollerHeight + "px"), 75)
-    }),
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('div', {
     staticClass: " weex-ct weex-div",
     style: ({
       height: _vm._px2rem((_vm.scrollerHeight + "px"), 75)
@@ -39828,7 +39820,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "div"
     }
-  }, [_vm._t("default", null, {})], 2)]), _vm._v(" "), _c('div', {
+  }, [_vm._t("default", null, {})], 2), _vm._v(" "), _c('div', {
     staticClass: "nav weex-ct weex-div",
     style: ({
       height: _vm._px2rem((_vm.barHeight + "px"), 75),
@@ -39839,10 +39831,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, _vm._l((_vm.barItems), function(item) {
     return _c('div', {
-      staticClass: "link weex-ct weex-div",
-      style: ({
-        color: item.selected ? '#00BBE4' : 'gray'
-      }),
+      staticClass: " weex-ct weex-div",
       attrs: {
         "weex-type": "div",
         "data-evt-click": ""
@@ -40308,7 +40297,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.content {\n    /*background-color: red;*/\n    /*width: 500px;*/\n    /*height: 500px;*/\n    /*padding: 0 0 1px 0;*/\n}\n\n", ""]);
+exports.push([module.i, "\n.content {\n    /*width: 500px;*/\n    /*height: 500px;*/\n    /*padding: 0 0 1px 0;*/\n}\n\n", ""]);
 
 // exports
 
@@ -40368,12 +40357,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-//
 
 var modal = weex.requireModule('modal');
 
 var SCROLLTABHEIGHT = 100;
-var TABBARHEIGHT = 250;
+var TABBARHEIGHT = 100;
 exports.default = {
     //        props: ['height'],
     components: {
@@ -40390,7 +40378,7 @@ exports.default = {
             scrollTabHeight: SCROLLTABHEIGHT,
             componentHeight: _utils2.default.DEVICEHEIGHT - SCROLLTABHEIGHT - TABBARHEIGHT,
             ScrollableTabView: _ScrollableTabView2.default,
-            activeScrollItem: _Animation2.default,
+            activeScrollItem: _Focus2.default,
             scrollItems: [{
                 tabBarUnderlineStyle: {
                     borderBottomWidth: '4px'
@@ -40403,7 +40391,7 @@ exports.default = {
                 },
                 title: '关注',
                 component: _Focus2.default,
-                active: false,
+                active: true,
                 onPress: function onPress(item) {
                     _this.activeScrollItem = item.component;
                 }
@@ -40451,7 +40439,7 @@ exports.default = {
                 },
                 title: '动画',
                 component: _Animation2.default,
-                active: true,
+                active: false,
                 onPress: function onPress(item) {
                     _this.activeScrollItem = item.component;
                 }
@@ -40539,7 +40527,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.tabBarBox[data-v-b3ef698a] {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: flex;\n    z-index: 100;\n    flex-direction: row;\n    justify-content: space-around;\n    background-color: #fff;\n}\n.item[data-v-b3ef698a] {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding: 0.26667rem 0.53333rem;\n}\n.title[data-v-b3ef698a] {\n    font-weight: 500;\n}\n.tabContent[data-v-b3ef698a] {\n    overflow-y: scroll;\n    position: absolute;\n    top: 1.33333rem;\n}\n", ""]);
+exports.push([module.i, "\n.tabBarBox[data-v-b3ef698a] {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: flex;\n    z-index: 100;\n    flex-direction: row;\n    justify-content: space-around;\n    background-color: #fff;\n}\n.item[data-v-b3ef698a] {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding: 0.26667rem 0.53333rem;\n}\n.title[data-v-b3ef698a] {\n    font-weight: 500;\n}\n.tabContent[data-v-b3ef698a] {\n    background-color: red;\n\n    overflow-y: scroll;\n    position: absolute;\n    top: 1.33333rem;\n}\n", ""]);
 
 // exports
 
@@ -40616,6 +40604,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
 
 var DISTANCE = 50;
 var PLATFORM = weex.config.env.platform;
@@ -40632,7 +40622,10 @@ exports.default = {
         };
     },
     mounted: function mounted() {
-        console.log(_utils2.default.DEVICEWIDTH);
+        modal.toast({
+            message: this.componentHeight,
+            duration: 3
+        });
         this.currentItem = this.scrollItems.filter(function (e) {
             return e.active;
         })[0] || this.scrollItems[0];
@@ -40941,6 +40934,9 @@ var modal = weex.requireModule('modal'); //
 //
 //
 //
+//
+//
+//
 
 exports.default = {
     props: ['height'],
@@ -40991,11 +40987,16 @@ exports.default = {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('scroller', {
-    staticClass: "list",
+  return _c('div', {
+    staticClass: " weex-ct weex-div",
     style: ({
       height: _vm._px2rem((_vm.height + "px"), 75)
     }),
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('list', {
+    staticClass: "list",
     attrs: {}
   }, [_vm._l((_vm.l), function(num) {
     return _c('div', {
@@ -41034,7 +41035,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Loading ...")]), _vm._v(" "), _c('loading-indicator', {
     staticClass: "indicator",
     attrs: {}
-  })], 1)], 2)
+  })], 1)], 2)], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -41345,7 +41346,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.animationBox[data-v-72fb34b4] {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    position: relative;\n    width: 100%;\n    height: 100%;\n}\n.beginBtn[data-v-72fb34b4] {\n    background-color: lightseagreen;\n    color: #fff;\n    padding: 0.4rem 1.06667rem;\n    border-radius: 0.2rem;\n    font-size: 0.53333rem;\n}\n\n", ""]);
+exports.push([module.i, "\n.animationBox[data-v-72fb34b4] {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    position: absolute;\n}\n.beginBtn[data-v-72fb34b4] {\n    background-color: lightseagreen;\n    color: #fff;\n    padding: 0.4rem 1.06667rem;\n    border-radius: 0.2rem;\n    font-size: 0.53333rem;\n}\n\n", ""]);
 
 // exports
 
@@ -41360,37 +41361,21 @@ exports.push([module.i, "\n.animationBox[data-v-72fb34b4] {\n    display: -webki
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
+var _utils = __webpack_require__(4);
+
+var _utils2 = _interopRequireDefault(_utils);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
+    data: function data() {
+        return {
+            width: _utils2.default.DEVICEWIDTH,
+            height: _utils2.default.DEVICEHEIGHT - 300
+        };
+    },
+
     methods: {
         go: function go() {
             this.$router.push({
@@ -41402,7 +41387,31 @@ exports.default = {
             });
         }
     }
-};
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 184 */
@@ -41411,6 +41420,10 @@ exports.default = {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "animationBox weex-ct weex-div",
+    style: ({
+      width: _vm._px2rem((_vm.width + "px"), 75),
+      height: _vm._px2rem((_vm.height + "px"), 75)
+    }),
     attrs: {
       "weex-type": "div"
     }
@@ -42140,7 +42153,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 
-
 var step = 40;
 var modal = weex.requireModule('modal');
 var animation = weex.requireModule('animation');
@@ -42241,7 +42253,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "animationContainer weex-ct weex-div",
     style: ({
-      height: _vm._px2rem(_vm.pageHeight, 75)
+      height: _vm._px2rem((_vm.pageHeight + "px"), 75),
+      width: _vm._px2rem((_vm.pageWidth + "px"), 75)
     }),
     attrs: {
       "weex-type": "div"

@@ -47,6 +47,8 @@
     }
 
     .tabContent {
+        background-color: red;
+
         overflow-y: scroll;
         position: absolute;
         top: 100px;
@@ -70,7 +72,10 @@
             }
         },
         mounted() {
-            console.log(utils.DEVICEWIDTH)
+            modal.toast({
+                message: this.componentHeight,
+                duration: 3
+            })
             this.currentItem = this.scrollItems.filter(e => e.active)[0] || this.scrollItems[0];
         },
         methods: {

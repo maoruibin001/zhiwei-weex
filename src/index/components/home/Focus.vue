@@ -1,16 +1,19 @@
 <template>
-    <scroller class="list" :style="{height: `${height}px`}">
-        <div class="cell" v-for="num in l">
-            <div class="panel">
-                <text class="text">{{num}}</text>
+    <div :style="{height: `${height}px`}">
+        <list class="list" >
+            <div class="cell" v-for="num in l">
+                <div class="panel">
+                    <text class="text">{{num}}</text>
+                </div>
             </div>
-        </div>
 
-        <loading class="loading" @loading="getData" :display="loading ? 'show' : 'hide'">
-            <text class="indicator-text">Loading ...</text>
-            <loading-indicator class="indicator"></loading-indicator>
-        </loading>
-    </scroller>
+            <loading class="loading" @loading="getData" :display="loading ? 'show' : 'hide'">
+                <text class="indicator-text">Loading ...</text>
+                <loading-indicator class="indicator"></loading-indicator>
+            </loading>
+        </list>
+    </div>
+
 </template>
 <style scoped>
     .list {
